@@ -1,6 +1,8 @@
 ---
-ansible_sudo: {
+ansible_arch_sudo: {
+  # Users to add to sudoers
   users: [],
+  # Groups to add to sudoers
   groups: [
     "wheel"
   ]

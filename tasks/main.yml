@@ -5,6 +5,6 @@
 
 - include_tasks: install.yml
 - include_tasks: configure.groups.yml
-  with_items: "{{ ansible_sudo.groups }}"
+  with_items: "{{ ansible_arch_sudo.groups }}"
 - include_tasks: configure.users.yml
-  with_items: "{{ ansible_sudo.users }}"
+  with_items: "{{ ansible_arch_sudo.users }}"

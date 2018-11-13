@@ -2,9 +2,9 @@
 - hosts: 127.0.0.1
   connection: local
   vars:
-    ansible_sudo:
+    ansible_arch_sudo:
       users: []
       groups:
         - "wheel"
   roles:
-    - { role: ansible-sudo }
+    - { role: ansible-arch-sudo }
