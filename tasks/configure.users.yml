@@ -1,0 +1,9 @@
+---
+- name: "Add user {{ item }} to sudo"
+  lineinfile:
+    path: /etc/sudoers.d/ansible_users
+    line: "{{ item }} ALL=(ALL) NOPASSWD: ALL"
+    state: present
+    mode: 0440
+    create: yes
+    validate: 'visudo -cf %s'

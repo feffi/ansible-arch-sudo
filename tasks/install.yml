@@ -1,0 +1,20 @@
+---
+- name: Install required dependecies
+  pacman:
+    name: "sudo"
+    state: present
+
+- name: Ensure the sudoers.d directory is created
+  file:
+    path: /etc/sudoers.d
+    owner: root
+    group: root
+    mode: 0750
+    state: directory
+
+- name: Set includedir in sudoers
+  lineinfile:
+    dest: /etc/sudoers
+    line: "#includedir /etc/sudoers.d"
+    state: present
+    validate: "/usr/sbin/visudo -cf %s"

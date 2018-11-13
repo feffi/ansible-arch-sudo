@@ -1,0 +1,7 @@
+---
+ansible_sudo: {
+  users: [],
+  groups: [
+    "wheel"
+  ]
+}

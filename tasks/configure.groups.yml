@@ -1,0 +1,9 @@
+---
+- name: "Add group {{ item }} to sudo"
+  lineinfile:
+    path: /etc/sudoers.d/ansible_groups
+    line: "%{{ item }} ALL=(ALL) NOPASSWD: ALL"
+    state: present
+    mode: 0440
+    create: yes
+    validate: 'visudo -cf %s'
